@@ -170,6 +170,13 @@ public class Queue {
             current.next = newNode;
         }
     }
+	
+    public void dequeue() {
+		System.out.println("Removed element: " + linkedList.head.next);
+        if (linkedList.head != null) {
+            linkedList.head = linkedList.head.next;
+        }
+    }
 
     public void display() {
         Node current = linkedList.head;
@@ -189,5 +196,10 @@ public class Queue {
         queue.enqueue(70);
         queue.enqueue(40);
         queue.display();
+
+		queue.dequeue();
+		queue.display();
+		queue.dequeue();
+		queue.display();
 	}
 }

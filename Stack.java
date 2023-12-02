@@ -164,6 +164,20 @@ public class Stack {
         linkedList.head = newNode;
     }
 
+	public void pop() {
+        if (linkedList.head != null) {
+			System.out.println("Popped: "+linkedList.head.data);
+            linkedList.head = linkedList.head.next;
+		}else{
+			System.out.println("Stack Underflow");
+		}
+    }
+
+	public int peek() {
+		System.out.println("Peek: "+linkedList.head.data);
+		return linkedList.head.data;
+	}
+
 	public void display() {
         Node current = linkedList.head;
         while (current != null) {
@@ -183,5 +197,9 @@ public class Stack {
         stack.push(70);
         stack.push(40);
         stack.display();
+		stack.peek();
+		stack.pop();
+        stack.display();
+		stack.peek();
 	}
 }
